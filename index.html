@@ -4,6 +4,7 @@
 
   <title>Vuejs Template</title>
   <script src="https://unpkg.com/vue@next"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 </head>
 
@@ -11,8 +12,17 @@
 
 <div id="app">
 
+<button v-on:click="GetAllCars" class="button">Get Cars!</button>
 
 
+<ul v-if="cars.length > 0">
+  <li v-for="car in cars" v-bind:key="car.id">
+    Id: {{ car.id }}
+    Vendor: {{ car.vendor }}
+    Model: {{ car.model }}
+    Price: {{ car.price }}
+  </li>
+</ul>
 
 
 
@@ -20,15 +30,7 @@
 
 </div>
 
-
-
-
-
-
-
-
-
-  <script src="./index.js"></script>
+  <script src="js/index.js"></script>
   <script>
     app.mount('#app')
   </script>
