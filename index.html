@@ -12,10 +12,18 @@
 
 <div id="app">
 
-<button v-on:click="GetAllCars" class="button">Get Cars!</button>
+
+<button v-show="cars.length > 0" v-on:click="ClearList">Clear List</button>
+
+<button v-show="cars.length == 0" v-on:click="GetAllCars">Get Cars</button>
+<br>
+<button v-show="cars.length > 0 && isShowing == false" v-on:click="Show">Show</button>
+<button v-show="cars.length > 0 && isShowing == true" v-on:click="Show">Hide</button>
 
 
-<ul v-if="cars.length > 0">
+
+
+<ul v-if="cars.length > 0 && isShowing == true">
   <li v-for="car in cars" v-bind:key="car.id">
     Id: {{ car.id }}
     Vendor: {{ car.vendor }}
@@ -23,6 +31,7 @@
     Price: {{ car.price }}
   </li>
 </ul>
+<p v-else>There are no Cars</p>
 
 
 

@@ -4,7 +4,9 @@ const app = Vue.createApp({
     data() {
         return {
             // add data here
-            cars: []
+            cars: [],
+            isShowing: true
+            
         }
         
     },
@@ -38,6 +40,16 @@ const app = Vue.createApp({
                     console.log("Error", error.message)
                 }
             })    
+        },
+        
+        ClearList() {
+            this.cars = []
+            this.isShowing = true
+            console.log("count posts: " + this.posts.length)
+        },
+
+        Show(){
+            this.isShowing = !this.isShowing
         }
     }
     
