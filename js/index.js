@@ -37,10 +37,7 @@ const app = Vue.createApp({
                 else {
                     console.log("Error", error.message)
                 }
-            })
-            
-
-            
+            })    
         }
     }
     
