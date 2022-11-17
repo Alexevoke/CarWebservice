@@ -18,11 +18,8 @@
 <button v-show="cars.length > 0" v-on:click="ClearList" class="button">Clear List</button>
 
 <button v-show="cars.length == 0" v-on:click="GetAllCars" class="button">Get Cars</button>
-<br>
 <button v-show="cars.length > 0 && isShowing == false" v-on:click="Show" class="button">Show</button>
 <button v-show="cars.length > 0 && isShowing == true" v-on:click="Show" class="button">Hide</button>
-
-
 
 
 <ul v-if="cars.length > 0 && isShowing == true">
